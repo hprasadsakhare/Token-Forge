@@ -1,4 +1,4 @@
-const { response } = require("express");
+const { app } = require("express");
 const { Telegraf, Markup } = require("telegraf");
 const { message } = require("telegraf/filters");
 require("dotenv").config();
@@ -138,4 +138,8 @@ bot.catch((err) => {
 // Start the bot
 bot.launch().then(() => {
   console.log("🤖 Bot is running...");
+});
+
+app.listen(3000, () => {
+  console.log(`Server listening on port no ${port}`);
 });
