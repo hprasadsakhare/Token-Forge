@@ -1,4 +1,6 @@
-const { app } = require("express");
+const express = require("express");
+const app = express();
+const port = process.env.PORT || 3000;
 const { Telegraf, Markup } = require("telegraf");
 const { message } = require("telegraf/filters");
 require("dotenv").config();
