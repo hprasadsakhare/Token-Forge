@@ -10,7 +10,7 @@ export default function Home() {
   const { activeAccount } = useAppContext();
 
   return (
-    <main className="w-full min-h-screen bg-gradient-to-br from-purple-900 via-black to-gray-900 text-white flex items-center justify-center px-4 py-8 transition-all duration-500 ease-in-out">
+    <main className="w-full min-h-screen bg-gradient-to-br from-purple-700 via-black to-gray-900 text-white flex items-center justify-center px-4 py-8 transition-all duration-500 ease-in-out">
       {activeAccount ? (
         <div className="w-full max-w-2xl bg-white/10 backdrop-blur-lg rounded-2xl shadow-2xl p-6 sm:p-10 text-white">
           {/* Address */}
@@ -20,9 +20,6 @@ export default function Home() {
               {activeAccount?.address.slice(-4)}
             </h1>
           </div>
-          <h1 className="text-3xl font-bold mb-6 text-center">
-            ERC20 Token Deployer
-          </h1>
           <InputField />
         </div>
       ) : (

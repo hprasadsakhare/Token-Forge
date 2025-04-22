@@ -14,6 +14,10 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
+        <h2 className="text-6xl ml-9 font-heading text-transparent bg-clip-text bg-gradient-to-r from-purple-400 via-pink-500 to-red-500 drop-shadow-md">
+          TokenForge
+        </h2>
+
         <ThirdwebProvider>
           <ContextProvider>
             {children}

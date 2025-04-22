@@ -12,8 +12,23 @@ const InputField = () => {
   const [tokenSymbol, setTokenSymbol] = useState("");
   const [selectedChain, setSelectedChain] = useState("");
   const [loading, setLoading] = useState(false);
+  const [res, setRes] = useState<string>("");
 
   const { activeAccount } = useAppContext();
+  const copylink = () => {
+    if (res) {
+      navigator.clipboard.writeText(res);
+      toast.success("Contract address copied to clipboard!", {
+        position: "top-right",
+        autoClose: 3000,
+      });
+    } else {
+      toast.warning("No contract address to copy.", {
+        position: "top-right",
+        autoClose: 3000,
+      });
+    }
+  };
 
   const handleSubmit = async () => {
     if (!tokenName || !tokenSymbol || !selectedChain) return;
@@ -29,7 +44,13 @@ const InputField = () => {
           chains: [sepolia],
         },
       });
-      console.log("Response: ", response);
+      console.log("Response: ", response.message);
+      console.log("Response data: ", response.transactions[0].to);
+      setRes(
+        typeof response.transactions[0].to === "string"
+          ? response.transactions[0].to
+          : ""
+      );
 
       toast.success(
         "Token deployed successfully with session ID: " + response.sessionId,
@@ -47,9 +68,9 @@ const InputField = () => {
 
   return (
     <div className="bg-white/5 backdrop-blur-lg border border-white/10 rounded-2xl shadow-lg">
-      <h2 className="text-2xl font-bold text-center text-white">
+      <p className="text-xl font-bold text-center text-white">
         Deploy ERC20 Token
-      </h2>
+      </p>
 
       <div className="space-y-4">
         <div>
@@ -103,6 +124,17 @@ const InputField = () => {
       >
         {loading ? "Deploying..." : "Deploy Token"}
       </button>
+      {res && (
+        <div className="mt-4 text-white">
+          <p>
+            Contract deployed at:{" "}
+            <span onClick={copylink} className="text-purple-400 font-mono">
+              {res}
+            </span>
+          </p>
+        </div>
+      )}
+
       <ToastContainer />
     </div>
   );
