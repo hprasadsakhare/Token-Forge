@@ -113,4 +113,3 @@ This project is licensed under the MIT License.
 
 ---
 
-Would you also like me to help you create badges (like `Built with Next.js`, `Telegram Mini App`, etc.) for the top of the README to make it look even cooler? 🚀🎨
