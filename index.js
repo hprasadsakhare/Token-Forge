@@ -66,6 +66,7 @@ bot.start(async (ctx) => {
       [Markup.button.callback("Base", "chain_8453")],
       [Markup.button.callback("Expanse", "chain_2")],
       [Markup.button.callback("Core Testnet", "chain_1115")],
+      [Markup.button.callback("RootStock Testnet", "chain_31")],
     ])
   );
 });
