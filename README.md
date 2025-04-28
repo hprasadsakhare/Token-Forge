@@ -5,6 +5,10 @@
 
 It is hosted as a **Telegram Mini App**, making it easy to use, manage, and access widely through the Telegram ecosystem.
 
+## 🚀 Demo Video 
+
+https://youtu.be/XGnvbw2Rs5k?si=2MtL8I1AxZ-y8pXH
+
 ---
 
 ## 🚀 Built With
