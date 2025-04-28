@@ -1,6 +1,3 @@
-Of course! Here's a clean and professional `README.md` you can use for your Token Forge GitHub project:
-
----
 
 # 🛠️ Token Forge
 
